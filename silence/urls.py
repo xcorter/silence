@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from main.views import IndexView
+from main.views import *
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^post-comment', create_comment),
     url(r'^', IndexView.as_view()),
     # url(r'post-comment^', ),
-    url(r'^admin/', include(admin.site.urls)),
 ]

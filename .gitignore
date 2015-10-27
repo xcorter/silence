@@ -6,3 +6,4 @@ __pycache__/
 *.sqlite3
 /silence/static/
 /silence/static/*
+.config

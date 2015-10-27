@@ -23,7 +23,7 @@
 
 </script>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Молчание моря</title>
 </head>
 <body>
     <section class="big-background">
@@ -33,9 +33,10 @@
             <div class="title">Запись должна быть готова через</div>
             <div class="clock"></div>
             <div class="comment">
-                <form>
+                <form method="POST" id="comment-form">
+                    {% csrf_token %}
                     <div class="textarea">
-                        <textarea></textarea>
+                        <textarea name="comment"></textarea>
                     </div>
                     <div class="submit">
                         <a class="button" href="#" action="send-comment">Оставить пожелание/Поругать</a>

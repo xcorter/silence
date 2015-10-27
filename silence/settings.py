@@ -22,11 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%bis-nu*803q(&38mm1tp#6qmiqg-*0es8ta^_5eo-*zs-25l6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = []
-
+isDev = ""
+configPath = os.path.join(os.path.dirname(__file__), ".config")
+if os.path.exists(configPath):
+    with open(configPath, "r") as config:
+        isDev = config.read().replace('\n', '')
+if isDev == "dev":
+    DEBUG = True
+else:
+    DEBUG = False
 
 # Application definition
 

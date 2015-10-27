@@ -1,7 +1,7 @@
 var Comment = function() {
 
     function showMessage() {
-        var commentHTML = '<div class="message hidden">??????? ?? ?????????</div>';
+        var commentHTML = '<div class="message hidden">Спасибо!</div>';
         $('.comment form').fadeOut(
             "slow",
             function() {
@@ -14,10 +14,10 @@ var Comment = function() {
     function sendComment(e) {
         e.stopPropagation();
         e.preventDefault();
-        showMessage();
-        return;
         $.ajax({
+            url: "/post-comment",
             method: "POST",
+            data: $('#comment-form').serialize(),
             success: showMessage
         });
     }
