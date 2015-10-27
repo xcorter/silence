@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -70,14 +71,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'silence.wsgi.application'
 
-
+#  CREATE USER 'silence'@'localhost' IDENTIFIED BY 'sp5metHa';
+#  create database silence;
+#  grant all privileges on silence.* TO 'silence'@'localhost';
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'silence',
+        'USER': 'silence',
+        'PASSWORD': 'sp5metHa',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 

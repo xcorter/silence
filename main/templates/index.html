@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/flipclock.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/forms.css' %}" />
+    <script src="{% static 'main/js/jquery-1.11.3.min.js' %}" ></script>
+    <script src="{% static 'main/js/jquery.mb.YTPlayer.js' %}" ></script>
+    <script src="{% static 'main/js/device.min.js' %}" ></script>
+    <script src="{% static 'main/js/background.js' %}" ></script>
+    <script src="{% static 'main/js/flipclock.min.js' %}" ></script>
+    <script src="{% static 'main/js/comment.js' %}" ></script>
+    <script src="{% static 'main/js/main.js' %}" ></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <section class="big-background">
+        <div class="pattern"></div>
+        <a id="bgndVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=1PKJD_DYoiY',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}"></a>
+        <div class="big-background-container">
+            <div class="title">Запись должна быть готова через</div>
+            <div class="clock"></div>
+            <div class="comment">
+                <form>
+                    <div class="textarea">
+                        <textarea></textarea>
+                    </div>
+                    <div class="submit">
+                        <a class="button" href="#" action="send-comment">Оставить пожелание/Поругать</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
